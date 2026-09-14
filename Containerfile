@@ -7,4 +7,5 @@ FROM ubuntu:26.04
 ARG VERSION=v0.0.1
 
 RUN --mount=type=bind,from=kairos-init,src=/kairos-init,dst=/kairos-init \
-    /kairos-init -l debug -s install --version "${VERSION}"
+    /kairos-init -l debug -s install --version "${VERSION}" && \
+    /kairos-init -l debug -s init --version "${VERSION}"
